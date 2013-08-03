@@ -12,18 +12,9 @@ class DmozSpider(BaseSpider):
     ]
 
     def parse(self, response):
-        #filename = response.url.split("/")[-2]
-        #print("filename %s" % filename)
-        #open(filename, 'wb').write(response.body)
-
         hxs = HtmlXPathSelector(response)
         sites = hxs.select('//ul/li')
 
-        for site in sites:
-            title = site.select('a/text()').extract()
-            link = site.select('a/@href').extract()
-            desc = site.select('text()').extract()
-            print title, link, desc
         items = []
         for site in sites:
            item = TutorialItem()
