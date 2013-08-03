@@ -5,13 +5,6 @@
 
 from scrapy.item import Item, Field
 
-class TutorialItem(Item):
-    # define the fields for your item here like:
-    # name = Field()
-    title = Field()
-    link = Field()
-    desc = Field()
-
 class KuaidiSiteItem(Item):
     # define the fields for your item here like:
     # name = Field()
