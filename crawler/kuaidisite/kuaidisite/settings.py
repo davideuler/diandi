@@ -7,9 +7,13 @@
 #
 
 BOT_NAME = 'kuaidisite'
+LOG_LEVEL = 'INFO'
 
 SPIDER_MODULES = ['kuaidisite.spiders']
 NEWSPIDER_MODULE = 'kuaidisite.spiders'
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'kuaidisite (+http://www.yourdomain.com)'
+USER_AGENT = 'kuaidisite (+http://www.diandi.com)'
+
+DOWNLOAD_DELAY = 0.5
+RANDOMIZE_DOWNLOAD_DELAY = True

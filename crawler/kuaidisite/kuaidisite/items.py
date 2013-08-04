@@ -15,6 +15,7 @@ class KuaidiSiteItem(Item):
     address = Field()
     sitetel = Field()
     sitename = Field()
+    company = Field()
     lat = Field()
     lng = Field()
     createddate = Field()
