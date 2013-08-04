@@ -1,3 +1,6 @@
 点递
 
-帮助发快递的用户快速找到
+how to crawl data:
+
+cd crawler/kuaidisite/
+scrapy crawl kuaidi

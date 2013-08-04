@@ -47,7 +47,6 @@ class KuaidiSpider(BaseSpider):
            strs = ""
            for i in item['company']:
               strs = strs + i
-              print i
            print( "company: %s" % strs)
            print strs
            line = json.dumps(dict(item), ensure_ascii=False) + "\n"
