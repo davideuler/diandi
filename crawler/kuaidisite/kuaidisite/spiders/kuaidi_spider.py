@@ -36,24 +36,22 @@ class KuaidiSpider(BaseSpider):
 
         items = []
 
-        f = codecs.open('record.txt', 'w' )
+        f = codecs.open('record.txt', 'w' ,encoding='utf-8')
         for site in sites:
            item = KuaidiSiteItem()
            #item['title'] = site.select('a/text()').extract()
-           item['company'] = site.select("//span[@class='font999']/text()").extract()
-           item['sitename'] = site.select("//a[@class='networkComname']/text()").extract()
+           item['company'] = site.select("span[@class='font999']/text()").extract()
+           item['sitename'] = site.select("a[1]/strong/text()").extract()
+           item['region'] = site.select("text()[3]").extract()
+           item['address'] = site.select("text()[4]").extract()
+           item['sitetel'] = site.select("text()[5]").extract()
 
-           #print("company: %s" % (item['company']) )
-           strs = ""
-           for i in item['company']:
-              strs = strs + i
-           print( "company: %s" % strs)
-           print strs
            line = json.dumps(dict(item), ensure_ascii=False) + "\n"
            print("dump: %s" % line)
-           print("unicode company: %s" % unicode(item['company'][0]) )
+           #print "site:",item 
+           #print("unicode company: %s" % unicode(item['company'][0]) )
 
-           #f.write(item['company'])
+           f.write(line)
 
            items.append(item)
         f.close()
